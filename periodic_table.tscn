@@ -1,0 +1,541 @@
+[gd_scene load_steps=21 format=3 uid="uid://bmg7lfqcsikk2"]
+
+[ext_resource type="Texture2D" uid="uid://ciww5mbre3bh" path="res://Images/Periodic Table Fixed.png" id="1_twoa0"]
+[ext_resource type="Script" uid="uid://bj0pepx0ci236" path="res://periodic_table.gd" id="2_ki0hi"]
+[ext_resource type="FontFile" uid="uid://38d60uvloch1" path="res://Lato-Bold.ttf" id="4_nefmv"]
+[ext_resource type="Texture2D" uid="uid://d2a0j2skuib8l" path="res://Images/switch.png" id="4_t5teh"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_twoa0"]
+size = Vector2(1453.5, 249.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ki0hi"]
+size = Vector2(73, 248.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wvljw"]
+size = Vector2(74, 936.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_t5teh"]
+size = Vector2(72.5, 112)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nefmv"]
+size = Vector2(74.5, 115.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ja2g0"]
+size = Vector2(70.5, 794)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_w2xux"]
+size = Vector2(72.5, 794)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_o8jsl"]
+size = Vector2(74, 802)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_wvljw"]
+load_path = "res://.godot/imported/Start.png-d7dc22d294974052500c1a4dcab6a9ba.ctex"
+
+[sub_resource type="Animation" id="Animation_ja2g0"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(329, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_nefmv"]
+resource_name = "left"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(0.5743491, 1),
+"update": 0,
+"values": [Vector2(466, 1), Vector2(329, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_t5teh"]
+resource_name = "right"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(0.53588665, 1),
+"update": 0,
+"values": [Vector2(329, 1), Vector2(466, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_w2xux"]
+_data = {
+&"RESET": SubResource("Animation_ja2g0"),
+&"left": SubResource("Animation_nefmv"),
+&"right": SubResource("Animation_t5teh")
+}
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_t5teh"]
+radius = 70.0
+height = 280.0
+
+[sub_resource type="Theme" id="Theme_t5teh"]
+default_font = ExtResource("4_nefmv")
+default_font_size = 35
+
+[sub_resource type="Theme" id="Theme_w2xux"]
+default_font = ExtResource("4_nefmv")
+
+[node name="Periodic Table" type="Sprite2D"]
+texture = ExtResource("1_twoa0")
+script = ExtResource("2_ki0hi")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+offset = Vector2(480.29, -58.53)
+zoom = Vector2(0.61, 0.61)
+
+[node name="metal_metalloid_nonmetalGroups" type="Node2D" parent="."]
+
+[node name="rare" type="Area2D" parent="metal_metalloid_nonmetalGroups"]
+
+[node name="collision8" type="CollisionShape2D" parent="metal_metalloid_nonmetalGroups/rare"]
+position = Vector2(117.25, 548.25)
+shape = SubResource("RectangleShape2D_twoa0")
+
+[node name="collision8_1" type="CollisionShape2D" parent="metal_metalloid_nonmetalGroups/rare"]
+position = Vector2(-521.5, 185.75)
+shape = SubResource("RectangleShape2D_ki0hi")
+
+[node name="ColorRect" type="ColorRect" parent="metal_metalloid_nonmetalGroups/rare"]
+offset_left = -610.0
+offset_top = 423.0
+offset_right = 846.0
+offset_bottom = 676.0
+mouse_filter = 2
+color = Color(0.06954538, 0.72559077, 0.41747698, 0.6039216)
+
+[node name="ColorRect2" type="ColorRect" parent="metal_metalloid_nonmetalGroups/rare"]
+offset_left = -557.0
+offset_top = 61.0
+offset_right = -484.0
+offset_bottom = 310.0
+mouse_filter = 2
+color = Color(0.07058824, 0.7254902, 0.41568628, 0.6039216)
+
+[node name="noble" type="Area2D" parent="metal_metalloid_nonmetalGroups"]
+
+[node name="collision7" type="CollisionShape2D" parent="metal_metalloid_nonmetalGroups/noble"]
+position = Vector2(962, -157)
+shape = SubResource("RectangleShape2D_wvljw")
+
+[node name="ColorRect" type="ColorRect" parent="metal_metalloid_nonmetalGroups/noble"]
+offset_left = 924.0
+offset_top = -626.0
+offset_right = 1000.0
+offset_bottom = 312.0
+mouse_filter = 2
+color = Color(0.9670693, 0.39716205, 0.42063594, 0.6039216)
+
+[node name="nonmetal" type="Area2D" parent="metal_metalloid_nonmetalGroups"]
+
+[node name="collision6" type="CollisionPolygon2D" parent="metal_metalloid_nonmetalGroups/nonmetal"]
+position = Vector2(103, -1)
+polygon = PackedVector2Array(428, -490, 428, -374, 527, -374, 526, -236, 623, -235, 623, -102, 723, -101, 723, 313, 795, 313, 795, -490)
+
+[node name="collision6_1" type="CollisionShape2D" parent="metal_metalloid_nonmetalGroups/nonmetal"]
+position = Vector2(-719.25, -565)
+shape = SubResource("RectangleShape2D_t5teh")
+
+[node name="ColorRect" type="ColorRect" parent="metal_metalloid_nonmetalGroups/nonmetal"]
+offset_left = 532.0
+offset_top = -491.0
+offset_right = 900.0
+offset_bottom = -374.0
+mouse_filter = 2
+color = Color(0.42760375, 0.6128355, 0.96999913, 0.6039216)
+
+[node name="ColorRect2" type="ColorRect" parent="metal_metalloid_nonmetalGroups/nonmetal"]
+offset_left = 629.0
+offset_top = -374.0
+offset_right = 900.0
+offset_bottom = -237.0
+mouse_filter = 2
+color = Color(0.42760375, 0.6128355, 0.96999913, 0.6039216)
+
+[node name="ColorRect3" type="ColorRect" parent="metal_metalloid_nonmetalGroups/nonmetal"]
+offset_left = 728.0
+offset_top = -237.0
+offset_right = 900.0
+offset_bottom = -101.0
+mouse_filter = 2
+color = Color(0.42760375, 0.6128355, 0.96999913, 0.6039216)
+
+[node name="ColorRect4" type="ColorRect" parent="metal_metalloid_nonmetalGroups/nonmetal"]
+offset_left = 827.0
+offset_top = -101.0
+offset_right = 900.0
+offset_bottom = 313.0
+mouse_filter = 2
+color = Color(0.42760375, 0.6128355, 0.96999913, 0.6039216)
+
+[node name="ColorRect5" type="ColorRect" parent="metal_metalloid_nonmetalGroups/nonmetal"]
+offset_left = -756.0
+offset_top = -622.0
+offset_right = -681.0
+offset_bottom = -510.0
+mouse_filter = 2
+color = Color(0.42760375, 0.6128355, 0.96999913, 0.6039216)
+
+[node name="postTransition" type="Area2D" parent="metal_metalloid_nonmetalGroups"]
+
+[node name="collision5" type="CollisionPolygon2D" parent="metal_metalloid_nonmetalGroups/postTransition"]
+position = Vector2(105, -1)
+polygon = PackedVector2Array(328, -349, 327, 312, 698, 313, 698, 61, 501, 61, 501, -76, 403, -76, 403, -349)
+
+[node name="ColorRect" type="ColorRect" parent="metal_metalloid_nonmetalGroups/postTransition"]
+offset_left = 432.0
+offset_top = 61.0
+offset_right = 802.0
+offset_bottom = 312.0
+mouse_filter = 2
+color = Color(0.8811969, 0.3819691, 0.51847696, 0.6039216)
+
+[node name="ColorRect2" type="ColorRect" parent="metal_metalloid_nonmetalGroups/postTransition"]
+offset_left = 432.0
+offset_top = -76.0
+offset_right = 605.0
+offset_bottom = 61.0
+mouse_filter = 2
+color = Color(0.8811969, 0.3819691, 0.51847696, 0.6039216)
+
+[node name="ColorRect3" type="ColorRect" parent="metal_metalloid_nonmetalGroups/postTransition"]
+offset_left = 432.0
+offset_top = -350.0
+offset_right = 507.0
+offset_bottom = -76.0
+mouse_filter = 2
+color = Color(0.8811969, 0.3819691, 0.51847696, 0.6039216)
+
+[node name="metalloid" type="Area2D" parent="metal_metalloid_nonmetalGroups"]
+
+[node name="collision4" type="CollisionShape2D" parent="metal_metalloid_nonmetalGroups/metalloid"]
+position = Vector2(470, -434)
+shape = SubResource("RectangleShape2D_nefmv")
+
+[node name="collision4_1" type="CollisionPolygon2D" parent="metal_metalloid_nonmetalGroups/metalloid"]
+position = Vector2(104, -1)
+polygon = PackedVector2Array(428, -349, 427, -101, 525, -101, 525, 35, 699, 36, 699, -76, 599, -76, 599, -212, 501, -212, 502, -349)
+
+[node name="ColorRect" type="ColorRect" parent="metal_metalloid_nonmetalGroups/metalloid"]
+offset_left = 432.0
+offset_top = -491.0
+offset_right = 507.0
+offset_bottom = -375.0
+mouse_filter = 2
+color = Color(0.98639446, 0.99783, 0.2779714, 0.6039216)
+
+[node name="ColorRect3" type="ColorRect" parent="metal_metalloid_nonmetalGroups/metalloid"]
+offset_left = 727.0
+offset_top = -78.0
+offset_right = 802.0
+offset_bottom = 38.0
+mouse_filter = 2
+color = Color(0.98639446, 0.99783, 0.2779714, 0.6039216)
+
+[node name="ColorRect2" type="ColorRect" parent="metal_metalloid_nonmetalGroups/metalloid"]
+offset_left = 532.0
+offset_top = -350.0
+offset_right = 606.0
+offset_bottom = -100.0
+mouse_filter = 2
+color = Color(0.98639446, 0.99783, 0.2779714, 0.6039216)
+
+[node name="ColorRect4" type="ColorRect" parent="metal_metalloid_nonmetalGroups/metalloid"]
+offset_left = 606.0
+offset_top = -213.0
+offset_right = 703.0
+offset_bottom = -100.0
+mouse_filter = 2
+color = Color(0.98639446, 0.99783, 0.2779714, 0.6039216)
+
+[node name="ColorRect5" type="ColorRect" parent="metal_metalloid_nonmetalGroups/metalloid"]
+offset_left = 629.0
+offset_top = -78.0
+offset_right = 727.0
+offset_bottom = 38.0
+mouse_filter = 2
+color = Color(0.98639446, 0.99783, 0.2779714, 0.6039216)
+
+[node name="ColorRect6" type="ColorRect" parent="metal_metalloid_nonmetalGroups/metalloid"]
+offset_left = 629.0
+offset_top = -100.0
+offset_right = 703.0
+offset_bottom = -78.0
+mouse_filter = 2
+color = Color(0.98639446, 0.99783, 0.2779714, 0.6039216)
+
+[node name="transition" type="Area2D" parent="metal_metalloid_nonmetalGroups"]
+
+[node name="collision3" type="CollisionPolygon2D" parent="metal_metalloid_nonmetalGroups/transition"]
+polygon = PackedVector2Array(-558, -212, 406, -212, 407, 312, -459, 311, -458, 37, -558, 36)
+
+[node name="ColorRect" type="ColorRect" parent="metal_metalloid_nonmetalGroups/transition"]
+offset_left = -459.0
+offset_top = -212.0
+offset_right = 407.0
+offset_bottom = 311.0
+mouse_filter = 2
+color = Color(0.53816116, 0.47138602, 0.94737583, 0.6039216)
+
+[node name="ColorRect2" type="ColorRect" parent="metal_metalloid_nonmetalGroups/transition"]
+offset_left = -558.0
+offset_top = -212.0
+offset_right = -459.0
+offset_bottom = 37.0
+mouse_filter = 2
+color = Color(0.53816116, 0.47138602, 0.94737583, 0.6039216)
+
+[node name="alkaline" type="Area2D" parent="metal_metalloid_nonmetalGroups"]
+
+[node name="collision2" type="CollisionShape2D" parent="metal_metalloid_nonmetalGroups/alkaline"]
+position = Vector2(-619.25, -87)
+shape = SubResource("RectangleShape2D_ja2g0")
+
+[node name="ColorRect" type="ColorRect" parent="metal_metalloid_nonmetalGroups/alkaline"]
+offset_left = -656.0
+offset_top = -485.0
+offset_right = -583.0
+offset_bottom = 310.0
+mouse_filter = 2
+color = Color(0.97230655, 0.580718, 0.27465242, 0.6039216)
+
+[node name="alkali" type="Area2D" parent="metal_metalloid_nonmetalGroups"]
+
+[node name="collision" type="CollisionShape2D" parent="metal_metalloid_nonmetalGroups/alkali"]
+position = Vector2(-718.25, -88)
+shape = SubResource("RectangleShape2D_w2xux")
+
+[node name="ColorRect" type="ColorRect" parent="metal_metalloid_nonmetalGroups/alkali"]
+offset_left = -756.0
+offset_top = -485.0
+offset_right = -681.0
+offset_bottom = 310.0
+mouse_filter = 2
+color = Color(0.06666667, 0.33333334, 0.26666668, 0.6039216)
+
+[node name="p-blockGroups" type="Node2D" parent="."]
+visible = false
+
+[node name="boron" type="Area2D" parent="p-blockGroups"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="p-blockGroups/boron"]
+position = Vector2(470, -89)
+shape = SubResource("RectangleShape2D_o8jsl")
+
+[node name="ColorRect" type="ColorRect" parent="p-blockGroups/boron"]
+offset_left = 432.0
+offset_top = -491.0
+offset_right = 507.0
+offset_bottom = 312.0
+mouse_filter = 2
+color = Color(0.38354003, 0.7278671, 0.5306636, 0.6039216)
+
+[node name="carbon" type="Area2D" parent="p-blockGroups"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="p-blockGroups/carbon"]
+position = Vector2(569, -90)
+shape = SubResource("RectangleShape2D_o8jsl")
+
+[node name="ColorRect2" type="ColorRect" parent="p-blockGroups/carbon"]
+offset_left = 727.0
+offset_top = -491.0
+offset_right = 802.0
+offset_bottom = 312.0
+mouse_filter = 2
+color = Color(0.7256495, 0.6576895, 1, 0.6039216)
+
+[node name="nitrogen" type="Area2D" parent="p-blockGroups"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="p-blockGroups/nitrogen"]
+position = Vector2(666, -90)
+shape = SubResource("RectangleShape2D_o8jsl")
+
+[node name="ColorRect3" type="ColorRect" parent="p-blockGroups/nitrogen"]
+offset_left = 629.0
+offset_top = -491.0
+offset_right = 704.0
+offset_bottom = 312.0
+mouse_filter = 2
+color = Color(0.35816374, 0.68624175, 0.9129014, 0.6039216)
+
+[node name="oxygen" type="Area2D" parent="p-blockGroups"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="p-blockGroups/oxygen"]
+position = Vector2(765, -88)
+shape = SubResource("RectangleShape2D_o8jsl")
+
+[node name="ColorRect4" type="ColorRect" parent="p-blockGroups/oxygen"]
+offset_left = 531.0
+offset_top = -491.0
+offset_right = 606.0
+offset_bottom = 312.0
+mouse_filter = 2
+color = Color(0.96752745, 0.49833965, 0.6536455, 0.6039216)
+
+[node name="halogens" type="Area2D" parent="p-blockGroups"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="p-blockGroups/halogens"]
+position = Vector2(863, -88)
+shape = SubResource("RectangleShape2D_o8jsl")
+
+[node name="ColorRect5" type="ColorRect" parent="p-blockGroups/halogens"]
+offset_left = 825.0
+offset_top = -491.0
+offset_right = 900.0
+offset_bottom = 312.0
+mouse_filter = 2
+color = Color(0.80244184, 0.7346399, 0.34015152, 0.6039216)
+
+[node name="Don\'t touch" type="Node2D" parent="p-blockGroups"]
+
+[node name="ColorRect" type="ColorRect" parent="p-blockGroups/Don\'t touch"]
+offset_left = -756.0
+offset_top = -212.0
+offset_right = 407.0
+offset_bottom = 312.0
+color = Color(0.5294118, 0.53333336, 0.54509807, 0.91764706)
+
+[node name="ColorRect2" type="ColorRect" parent="p-blockGroups/Don\'t touch"]
+offset_left = -756.0
+offset_top = -485.0
+offset_right = -583.0
+offset_bottom = -212.0
+color = Color(0.5294118, 0.53333336, 0.54509807, 0.91764706)
+
+[node name="ColorRect3" type="ColorRect" parent="p-blockGroups/Don\'t touch"]
+offset_left = -756.0
+offset_top = -622.0
+offset_right = -681.0
+offset_bottom = -485.0
+color = Color(0.5294118, 0.53333336, 0.54509807, 0.91764706)
+
+[node name="ColorRect4" type="ColorRect" parent="p-blockGroups/Don\'t touch"]
+offset_left = 924.0
+offset_top = -626.0
+offset_right = 1001.0
+offset_bottom = 313.0
+color = Color(0.5294118, 0.53333336, 0.54509807, 0.91764706)
+
+[node name="ColorRect5" type="ColorRect" parent="p-blockGroups/Don\'t touch"]
+offset_left = -610.0
+offset_top = 423.0
+offset_right = 845.0
+offset_bottom = 674.0
+color = Color(0.5294118, 0.53333336, 0.54509807, 0.91764706)
+
+[node name="Description" type="Sprite2D" parent="."]
+position = Vector2(1551, -70)
+scale = Vector2(0.78, 0.78)
+texture = SubResource("CompressedTexture2D_wvljw")
+
+[node name="switch" type="Sprite2D" parent="."]
+position = Vector2(-334.21, -709.87)
+texture = ExtResource("4_t5teh")
+hframes = 2
+
+[node name="slider" type="Sprite2D" parent="switch"]
+position = Vector2(329, 1)
+texture = ExtResource("4_t5teh")
+hframes = 2
+frame = 1
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="switch/slider"]
+libraries = {
+&"": SubResource("AnimationLibrary_w2xux")
+}
+
+[node name="clickArea" type="Area2D" parent="switch"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="switch/clickArea"]
+position = Vector2(260, 2)
+rotation = 1.5707964
+shape = SubResource("CapsuleShape2D_t5teh")
+
+[node name="ColorRect" type="ColorRect" parent="switch"]
+offset_left = -151.0
+offset_top = -125.0
+offset_right = 74.0
+offset_bottom = 118.0
+scale = Vector2(1.1, 1.1)
+color = Color(0, 0, 0, 1)
+
+[node name="ColorRect" type="ColorRect" parent="switch/ColorRect"]
+layout_mode = 0
+offset_left = 11.818176
+offset_top = 12.0
+offset_right = 212.72725
+offset_bottom = 231.0
+color = Color(0.73333335, 0.69411767, 0.69411767, 1)
+
+[node name="RichTextLabel" type="RichTextLabel" parent="switch/ColorRect"]
+layout_mode = 0
+offset_left = 20.190895
+offset_top = 29.88174
+offset_right = 204.01816
+offset_bottom = 240.79083
+theme = SubResource("Theme_t5teh")
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+text = "Metal/ Metalloid/ Nonmetal Groups"
+horizontal_alignment = 1
+
+[node name="ColorRect2" type="ColorRect" parent="switch"]
+offset_left = 421.0
+offset_top = -103.0
+offset_right = 668.0
+offset_bottom = 108.0
+color = Color(0, 0, 0, 1)
+
+[node name="ColorRect" type="ColorRect" parent="switch/ColorRect2"]
+layout_mode = 0
+offset_left = 13.0
+offset_top = 15.0
+offset_right = 233.0
+offset_bottom = 196.0
+color = Color(0.73333335, 0.69411767, 0.69411767, 1)
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="switch/ColorRect2"]
+layout_mode = 0
+offset_left = 11.0
+offset_top = 28.0
+offset_right = 234.0
+offset_bottom = 236.0
+theme = SubResource("Theme_w2xux")
+bbcode_enabled = true
+text = "[font=Lato-Bold.ttf][font_size=40][color=black]Group 13-16 Names"
+horizontal_alignment = 1
+
+[connection signal="mouse_entered" from="metal_metalloid_nonmetalGroups/rare" to="." method="_on_rare_mouse_entered"]
+[connection signal="mouse_entered" from="metal_metalloid_nonmetalGroups/noble" to="." method="_on_noble_mouse_entered"]
+[connection signal="mouse_entered" from="metal_metalloid_nonmetalGroups/nonmetal" to="." method="_on_nonmetal_mouse_entered"]
+[connection signal="mouse_entered" from="metal_metalloid_nonmetalGroups/postTransition" to="." method="_on_post_transition_mouse_entered"]
+[connection signal="mouse_entered" from="metal_metalloid_nonmetalGroups/metalloid" to="." method="_on_metalloid_mouse_entered"]
+[connection signal="mouse_entered" from="metal_metalloid_nonmetalGroups/transition" to="." method="_on_transition_mouse_entered"]
+[connection signal="mouse_entered" from="metal_metalloid_nonmetalGroups/alkaline" to="." method="_on_alkaline_mouse_entered"]
+[connection signal="mouse_entered" from="metal_metalloid_nonmetalGroups/alkali" to="." method="_on_alkali_mouse_entered"]
+[connection signal="mouse_entered" from="p-blockGroups/boron" to="." method="_on_boron_mouse_entered"]
+[connection signal="mouse_entered" from="p-blockGroups/carbon" to="." method="_on_carbon_mouse_entered"]
+[connection signal="mouse_entered" from="p-blockGroups/nitrogen" to="." method="_on_nitrogen_mouse_entered"]
+[connection signal="mouse_entered" from="p-blockGroups/oxygen" to="." method="_on_oxygen_mouse_entered"]
+[connection signal="mouse_entered" from="p-blockGroups/halogens" to="." method="_on_halogens_mouse_entered"]
+[connection signal="input_event" from="switch/clickArea" to="." method="_on_click_area_input_event"]
